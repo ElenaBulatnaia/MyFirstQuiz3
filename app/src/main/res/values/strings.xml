@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MyFirstQuiz3</string>
     <string name="txt_something_wrong">Something wrong</string>
+    <string name="txt_right_answer">TRUE</string>
+    <string name="txt_wrong_answer">FALSE</string>
+    <string name="txt_btn_true">TRUE</string>
+    <string name="txt_btn_false">FALSE</string>
+    <string name="txt_btn_next">NEXT</string>
 </resources>

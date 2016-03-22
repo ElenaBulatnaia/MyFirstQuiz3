@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.ref.WeakReference;
+
 public class QuizActivity extends AppCompatActivity {
     private TextView tvQuestion;
     private Button btnTrue;
@@ -21,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        helper = new QuizHelper(this);
+        helper = new QuizHelper(new WeakReference<Context>(this));
 
         InitializeWidgets();
         InitializeCards();
@@ -38,6 +40,8 @@ public class QuizActivity extends AppCompatActivity {
         btnTrue = (Button) findViewById(R.id.btnTrue);
         btnFalse = (Button) findViewById(R.id.btnFalse);
         btnNext = (Button) findViewById(R.id.btnNext);
+
+        tvQuestion.setTypeface(helper.getCurrentFont());
 
         btnTrue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +65,8 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    private void showResultToastForButton(boolean b) {
-        showToast(Boolean.toString(b == helper.getCurrentAnswer()));
+    private void showResultToastForButton(boolean gotAnswer) {
+        showToast(helper.getStringResultForAnswer(gotAnswer));
     }
 
     private void InitializeCards() { helper.initCards(); }

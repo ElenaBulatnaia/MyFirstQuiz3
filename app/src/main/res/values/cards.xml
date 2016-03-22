@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="questions">
-        <item>Question #1</item>
-        <item>Question #2</item>
-        <item>Question #3</item>
-        <item>Question #4</item>
-        <item>Question #5</item>
+    <string-array name="cards">
+        <item>Question #1/1</item>
+        <item>Question #2/0</item>
+        <item>Question #3/1</item>
+        <item>Question #4/1</item>
+        <item>Question #5/0</item>
+        <item>Question #6/0</item>
+        <item>Question #7/1</item>
+        <item>Question #8/1</item>
+        <item>Question #9/0</item>
+        <item>Question #10/1</item>
     </string-array>
-
-    <integer-array name="answers">
-        <item>1</item>
-        <item>0</item>
-        <item>0</item>
-        <item>1</item>
-        <item>0</item>
-    </integer-array>
 </resources>

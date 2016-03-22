@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="@drawable/quiz_pic_background"
     tools:context="com.khasang.myfirstquiz.QuizActivity">
 
     <TextView
         android:id="@+id/tvQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Question" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llButtons"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:textSize="@dimen/txt_size"
+        android:textColor="#6699ec"
+        tools:text="Question" />
 
     <LinearLayout
+        android:id="@+id/llButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="8dp">
+        android:gravity="center">
 
         <Button
             android:id="@+id/btnTrue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="TRUE"/>
+            android:text="@string/txt_btn_true"/>
+
+        <Space
+            android:layout_width="24dp"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnFalse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="FALSE"/>
+            android:text="@string/txt_btn_false"/>
 
     </LinearLayout>
 
@@ -46,5 +54,7 @@
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/txt_btn_next"/>
+</RelativeLayout>
